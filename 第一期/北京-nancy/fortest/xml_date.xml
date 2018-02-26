@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page>
+    <index>
+        <login type="id" value="btn" desc="登录按钮"></login>
+        <usr type="css" value=".css" desc="用户名输入框"></usr>
+        <psw type="xpath" value="//html/psw" dexc="密码输入框"></psw>
+    </index>
+</page>

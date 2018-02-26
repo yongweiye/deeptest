@@ -78,8 +78,8 @@ if __name__ == "__main__":
 {'key1': 'value1', 'key2': 'value2'}
 2
 {'key1': 'value1', 'key2': 'value2'}
-<class 'str'>
-<class 'dict'>
+<fortest 'str'>
+<fortest 'dict'>
 {'key1': 'value1', 'key2': 'value2'}
 {1: 'value', 2: 'value', 3: 'value', 4: 'value'}
 value1

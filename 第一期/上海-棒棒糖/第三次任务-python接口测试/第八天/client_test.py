@@ -47,7 +47,7 @@ params = urllib.parse.urlencode({'@number': 19999,
                                  '@type': 'issue',
                                  '@action': 'show'})
 # http头参数
- headers = {"Content-type":
+headers = {"Content-type":
                "application/x-www-form-urlencoded",
            "Accept": "text/plain"}
 conn = http.client.HTTPConnection("bugs.python.org")

@@ -4,10 +4,8 @@ __author__ = 'nancy'
 import configparser
 import os
 
+# ini文件操作类
 class iniconf():
-    '''
-    ini文件操作类
-    '''
     def __init__(self,inipath):
         self.inipath  = inipath
         if os.path.exists(self.inipath):
@@ -29,8 +27,3 @@ class iniconf():
             return cfData
         except Exception as e:
             print(e)
-
-if __name__ == "__main__":
-    path  = "readini.ini"
-    conf = iniconf(path)
-    print(conf.get_conf_data("addsection"))
