@@ -88,3 +88,43 @@ if __name__ == "__main__":
     set_result1=dict1.setdefault("name","设置值")
     set_result12=dict1.setdefault("我是key","我是value")
     print(dict1)
+    
+    items_demo=dict1.items()
+    print(items_demo)
+
+    keys_demo=dict1.keys()
+    print(keys_demo)
+
+    values_demo=dict1.values()
+    print(values_demo)
+
+    dict1.update({"one":1,"two":2})
+    print(dict1)
+
+    for(key,value) in dict1.items():
+        print("%s:%s"%(key,value))
+
+    for key in dict1.keys():
+        print("%s:%s"%(key,dict1[key]))
+
+    
+    set1=set("good heloo")
+    set2=set("good night")
+    set1.add("ni")
+    set1.remove(" ")
+    set1.update([10086,3])
+    print(set1.issubset(set2))
+    print(set1.issuperset(set2))
+    print(set1.union(set2))
+    print(set1.intersection(set2))
+    print(set1.difference(set2 ))
+
+    var1=input("请输入一个整数: ")
+    if var1>0 and var1<10:
+        print("你输入正确")
+    elif var1>=10:
+        print("输入对了")
+    else:
+        print("输入错误")
+
+        88
