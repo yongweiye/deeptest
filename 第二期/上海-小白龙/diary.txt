@@ -8,3 +8,6 @@ CSV Data Set Config
 git add . 
 git commit -m "comment" 
 git push
+【2018年2月28日】
+判断字符串是否是数字：str.isdigit()
+生成随机整数：random.randint(start,end)
