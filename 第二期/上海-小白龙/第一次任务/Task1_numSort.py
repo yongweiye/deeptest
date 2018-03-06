@@ -2,7 +2,7 @@
 #encoding=utf-8
 
 import random
-
+__author__=u'小白龙'
 class MySort:
     # 生成随机数,返回排序后的结果
     # start, end为限制随机数生成的范围

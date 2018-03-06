@@ -11,3 +11,8 @@ git push
 【2018年2月28日】
 判断字符串是否是数字：str.isdigit()
 生成随机整数：random.randint(start,end)
+【2018年3月6日】
+tuple用小括号()标识，元组的元素不可修改
+字典Dictionary用中括号标识，其元素为key-value对应，key与value用冒号:分割开
+字典的key是唯一不可重复的，可以是数字，字符串，元组，但是不能是列表
+values可以是任何类型的对象

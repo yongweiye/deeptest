@@ -1,6 +1,6 @@
 #!/usr/bin/python
 #encoding=utf-8
-
+__author__=u'小白龙'
 class Calc:
     def add(self,a,b):
         if str(a).isdigit()&str(b).isdigit():
