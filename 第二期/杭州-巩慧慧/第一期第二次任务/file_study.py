@@ -6,9 +6,9 @@
 import os
 
 def walk_dir(target_dir):
-    #
-    #
-    #
+    # root当前根目录
+    # dirs:root下的子目录
+    # files:root下的子文件
     walk_result = os.walk(target_dir)
     print(type(walk_result))
 
@@ -48,8 +48,8 @@ if __name__ == "__main__":
 
     # 将改变至C盘
     print("改变工作目录到dirname")
-    os.chdir("c:")
-    print(os.getcwd())
+    # os.chdir("c:")
+    # print(os.getcwd())
 
     # 现初始化当前文件全路径变量
     path = __file__
@@ -75,11 +75,11 @@ if __name__ == "__main__":
 
     # 将文件和目录分割
     # 若传入的是目录，则将最后的目录命做为文件名分割
-    print("目录命和文件命分离： ", end=" ")
+    print("目录命和文件命分离： ")
     print(os.path.split(path))
 
     # 分离文件名和扩展名
-    print("文件名和扩展名分离：", end=" ")
+    print("文件名和扩展名分离：")
     print(os.path.splitext(path))
 
     # 获取文件命
