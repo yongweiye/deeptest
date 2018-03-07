@@ -10,14 +10,14 @@
 我们的github项目地址：https://github.com/small99/deeptest
 
 3. 关注公众号：
-![]../公众号.jpg
 
-回复如图所示获取对于教程文章
+![公众号](../公众号.jpg)
 
-![]wenzhang.png
+在公众号中回复如图所示获取对于教程文章
+
+![文章](../wenzhang.png)
 
 查阅文章《如何提交自己的代码至github》
-
 
 
 ## 注
