@@ -1,6 +1,7 @@
 # Requests 高级用法
-
-![Requests](http://www.python-requests.org/en/master/_static/requests-sidebar.png)
+<!--
+![Requests](http://www.python-requests.org/en/master/_static/requests-sidebar.png) -->
+![搬砖](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521017807024&di=4d43e54309a3dfa0f3c081cce5e5f02a&imgtype=0&src=http%3A%2F%2Fimg5.2345.com%2Fduoteimg%2FzixunImg%2Flocal%2F2017%2F07%2F13%2F14999222088018.jpg)
 ## 简介说明 : 
 Requests是Python中优雅而简单的HTTP库，适用于人类；  
 *Requests 支持 Python 2.6—2.7以及3.3—3.7，而且能在 PyPy 下完美运行。*
@@ -307,12 +308,12 @@ request(method, url, params=None, data=None, headers=None, cookies=None, files=N
 
 
 ```
-class requests.Response[源代码]
+class requests.Response
 响应对象，其中包含服务器对HTTP请求的响应。
 apparent_encoding
 由chardet库提供的显示编码。
 
-close()[源代码]
+close()
 将连接释放回池。一旦这个方法被调用，底层的原始对象就不能再被访问了。
 
 *Note: 通常不需要显式地调用。*
@@ -339,20 +340,20 @@ is_permanent_redirect
 
 is_redirect
 如果这个响应是一个正确格式的HTTP重定向，那么它可以被自动处理(通过session .resolve_redirect)。
-iter_content(chunk_size=1, decode_unicode=False)[源代码]    
+iter_content(chunk_size=1, decode_unicode=False)    
 
 迭代响应数据。stream=True被设置为请求时，这就避免了将内容立即读取到内存中以获得较大的响应。块大小是它应该读入内存的字节数。这并不一定是返回的每个条目的长度。  
 
 chunk_size必须为int类型或None类型。根据流的值，没有一个值会有不同的功能。stream=True将读取数据，当它到达任何大小的数据块时。如果流=False，数据将作为单个块返回。  
 
 如果decode_unicode是正确的，那么将根据响应对内容进行解码。
-iter_lines(chunk_size=512, decode_unicode=None, delimiter=None)[源代码]
+iter_lines(chunk_size=512, decode_unicode=None, delimiter=None)
 
 迭代响应数据，一次一行 . stream=True被设置为请求时，这就避免了将内容立即读取到内存中以获得较大的响应。
 注解
 
 
-json(**kwargs)[源代码]    
+json(**kwargs)    
 返回响应的json编码的内容，如果有的话。 if any.
 
 参数:	**kwargs -- Optional 可选参数,json.loads 加载需要
@@ -367,7 +368,7 @@ ok
 
 此属性检查响应的状态代码是否在400到600之间，以查看是否存在客户端错误或服务器错误。如果状态码在200到400之间，这将返回True。检查响应代码是否为200 OK。
 
-raise_for_status()[源代码]
+raise_for_status()
 抛出HTTPError异常
 
 raw = None
@@ -558,3 +559,240 @@ def delete(url, **kwargs):
 
 ```
 
+
+一、接口名称：
+
+QQ号码测星运
+
+二、接口描述：
+
+接口地址：http://japi.juhe.cn/qqevaluate/qq  
+返回格式：json  
+请求方式：get post  
+请求示例：http://japi.juhe.cn/qqevaluate/qq?key=您申请的appKey&qq=283340479  
+接口备注：根据传入的参数qq号码和您申请的appKey测星运
+
+
+
+三、请求参数说明（入参）：
+<!--
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+-->
+
+
+|名称	 | 必填 |    类型	 |     说明|
+|-----|-----|----|-----|
+|key|	    是	|   string|	  您申请的appKey|
+|qq	|    是	|   string	  |需要测试的QQ号码|
+
+
+
+
+四、 返回参数说明（出参）：
+|名称|            类型   |    说明|
+|----|----|----|
+|error_code |    int	    | 返回状态码  |
+|reason	      | string |   返回原因
+|result	      | string	| 返回实体内容
+|conclusion   |  string|    QQ号码测试结论
+|analysis	  | string	| 结论分析
+
+
+
+ 
+五、 JSON返回示例：
+```
+{
+    "error_code": 0,//返回状态码
+    "reason": "success",//返回原因
+    "result": {//返回实体内容
+        "data": {
+            "conclusion": "[大吉+官运+财运+才艺]如龙得云，青云直上，智谋奋进，才略奏功",//QQ号码测试结论
+            "analysis": "欲望难足希望高，计谋成功财力豪，猜疑嫉妒性自改，如龙乘云势运开。智能超人贯彻大志，富贵无比，不甘寂寞，叱吒风云之大吉数，但容易发生牢骚
+及贪心、欲望太多而永不知足，为其缺点。切忌沉迷投机，可免贻误前程。"//结论分析
+        }
+    }
+}
+```
+六、错误码参考：
+服务级别错误代码参照(error_code) :
+
+|错误码|说明 |  
+ |------|------ |  
+|       |                 |  
+|216601|                       请求无结果返回 |  
+|216602 |                      无qq参数或者格式不正确 |  
+系统级错误码参照 : 
+|错误码      |        说明     |
+|----|-----|
+|10001   |            错误的请求Key|
+|10002  |             该key无请求权限|
+|10003 |              KEY过期|
+|10004|               错误的OPENID|
+七、Python代码请求示例：
+
+Appkey参数需要注册申请，才能调用，原接口地址：[https://www.juhe.cn/docs/api/id/166](https://www.juhe.cn/docs/api/id/166)
+
+如果key参数不对，是不会请求成功的！
+
+```
+# coding:utf-8
+import requests
+
+url = "http://japi.juhe.cn/qqevaluate/qq"
+
+par = {
+      "key": "******************",  # appkey需要注册申请
+      "qq":  "283340479"
+       }
+
+r = requests.get(url, params=par)
+print(r.text)  # 打印文本
+res = r.json()  # 返回的是json,用r.json解析器转成字典
+
+# 字典取某个字段
+conclusion = res["result"]["data"]["conclusion"]
+print(conclusion)
+analysis = res["result"]["data"]["analysis"]
+print(analysis)
+
+
+```
+>>>选读部分 :
+八、Java代码请求示例：
+```
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLEncoder;
+import java.util.HashMap;
+import java.util.Map;
+ 
+import net.sf.json.JSONObject;
+ 
+/**
+*QQ号码测吉凶调用示例代码 － 聚合数据
+*在线接口文档：http://www.juhe.cn/docs/166
+**/
+ 
+public class JuheDemo {
+    public static final String DEF_CHATSET = "UTF-8";
+    public static final int DEF_CONN_TIMEOUT = 30000;
+    public static final int DEF_READ_TIMEOUT = 30000;
+    public static String userAgent =  "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.66 Safari/537.36";
+ 
+    //配置您申请的KEY
+    public static final String APPKEY ="*************************";
+ 
+    //1.QQ号码测吉凶 
+    public static void getRequest1(){
+        String result =null;
+        String url ="http://japi.juhe.cn/qqevaluate/qq";//请求接口地址
+        Map params = new HashMap();//请求参数
+            params.put("key",APPKEY);//您申请的appKey
+            params.put("qq","");//需要测试的QQ号码
+ 
+        try {
+            result =net(url, params, "GET");
+            JSONObject object = JSONObject.fromObject(result);
+            if(object.getInt("error_code")==0){
+                System.out.println(object.get("result"));
+            }else{
+                System.out.println(object.get("error_code")+":"+object.get("reason"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+ 
+ 
+ 
+    public static void main(String[] args) {
+ 
+    }
+ 
+    /**
+     *
+     * @param strUrl 请求地址
+     * @param params 请求参数
+     * @param method 请求方法
+     * @return  网络请求字符串
+     * @throws Exception
+     */
+    public static String net(String strUrl, Map params,String method) throws Exception {
+        HttpURLConnection conn = null;
+        BufferedReader reader = null;
+        String rs = null;
+        try {
+            StringBuffer sb = new StringBuffer();
+            if(method==null || method.equals("GET")){
+                strUrl = strUrl+"?"+urlencode(params);
+            }
+            URL url = new URL(strUrl);
+            conn = (HttpURLConnection) url.openConnection();
+            if(method==null || method.equals("GET")){
+                conn.setRequestMethod("GET");
+            }else{
+                conn.setRequestMethod("POST");
+                conn.setDoOutput(true);
+            }
+            conn.setRequestProperty("User-agent", userAgent);
+            conn.setUseCaches(false);
+            conn.setConnectTimeout(DEF_CONN_TIMEOUT);
+            conn.setReadTimeout(DEF_READ_TIMEOUT);
+            conn.setInstanceFollowRedirects(false);
+            conn.connect();
+            if (params!= null && method.equals("POST")) {
+                try {
+                    DataOutputStream out = new DataOutputStream(conn.getOutputStream());
+                        out.writeBytes(urlencode(params));
+                } catch (Exception e) {
+                    // TODO: handle exception
+                }
+            }
+            InputStream is = conn.getInputStream();
+            reader = new BufferedReader(new InputStreamReader(is, DEF_CHATSET));
+            String strRead = null;
+            while ((strRead = reader.readLine()) != null) {
+                sb.append(strRead);
+            }
+            rs = sb.toString();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (reader != null) {
+                reader.close();
+            }
+            if (conn != null) {
+                conn.disconnect();
+            }
+        }
+        return rs;
+    }
+ 
+    //将map型转为请求参数型
+    public static String urlencode(Map<String,Object>data) {
+        StringBuilder sb = new StringBuilder();
+        for (Map.Entry i : data.entrySet()) {
+            try {
+                sb.append(i.getKey()).append("=").append(URLEncoder.encode(i.getValue()+"","UTF-8")).append("&");
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
+        }
+        return sb.toString();
+    }
+}
+```
+
+
+![imageICON](https://imgsa.baidu.com/forum/w%3D580/sign=3436a4eb942f07085f052a08d925b865/ac9486ed8a136327d13074979b8fa0ec09fac706.jpg)
