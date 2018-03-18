@@ -83,3 +83,6 @@ if __name__ == "__main__":
     print("set_demo清空后：", end="")
     set27 = set_demo.clear()
     print(set27)
+
+    #集合不能切片
+    #print(set_demo(1,2))
