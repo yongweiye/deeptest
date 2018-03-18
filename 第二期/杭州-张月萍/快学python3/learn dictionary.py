@@ -91,7 +91,9 @@ if __name__ == "__main__":
     dict_demo["yingwenming"] = "carina"
     # update 更新字典
     dict_demo.update(dict_new)   # 往字典中添加多个元素
+    #dict_demo1 = dict_demo.update["yingyu": "YY"]  #更新某个值
     print("dict_new更新到dict_demo，数据合并：", dict_demo)
+
 
     # 修改
     dict_demo["zhongwen"] = "中文"
@@ -113,7 +115,13 @@ if __name__ == "__main__":
 
     # 字典不能切片
     #print(dict_demo[1:2])
-    #dict_demo1 = {'BAIDU':}    缺少值，字典中键与值不能脱离对方而存在
+    # 缺少值，字典中键与值不能脱离对方而存在
+    #dict_demo1 = {'BAIDU':}
+    #print(dict_demo1)
+    # 将一个可变的元素作为key，比如列表􀁏􀁈􀒂􁌱􀘲􁔰􀖢􀔅􀀃􀁎􀁈􀁜􀀃􀹶􀺅􀭌􀨁􀙎?􀓞􀓻􀝢􀝒􀒁􀁐􀁘􀁗􀁄􀁅􀁏􀁈􀒂􁌱􀘲􁔰􀖢􀔅􀀃􀁎􀁈􀁜􀀃􀹶􀺅􀭌􀨁􀙎􀩙􀓞􀓻􀝢􀝒􀒁􀁐􀁘􀁗􀁄􀁅􀁏􀁈􀒂􁌱􀘲􁔰􀖢􀔅􀀃􀁎􀁈􀁜􀀃􀹶􀺅􀭌􀨁􀙎
+    dict_test = {[]: 'a test'}    #报错：unhashable type: 'list'
+    print(dict_test)
+
 
 
 
